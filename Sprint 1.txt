@@ -1,0 +1,25 @@
+Historias
+1. Como cajero quiero registrar las ventas del día a día para llevar un control de ingresos.
+Criterios
+1. Dado que el cajero tiene productos disponibles, cuando registra una venta con uno o más productos, entonces la venta queda guardada con fecha, hora y el total de venta.
+2.Dado que una venta fue registrada correctamente, en cuanto termine el día, esta venta se incluye en un registro de total de ventas diarias.
+
+2.Como cliente quiero recibir un comprobante de mi compra para saber lo que compre.
+Criterios
+1.Dado que el cliente realiza una compra, cuando el pago se completa, el cliente recibe un comprobante con los productos , cantidad y total.
+2.Dado que el comprobante fue generado, cuando el cliente lo revisa, este puede identificar claramente lo que compro. 
+
+3.Como barista quiero ver los pedidos pendientes para preparar las bebidas en el orden de llegada. 
+Criterios
+1.Dado que existen criterios por los cliente, cuando el barista consulta la lista de pedidos, entonces solo se muestran los pedidos pendientes.
+2.Dado que hay varios pedidos pendientes, cuando el barista los visualiza, entonces aparecen ordenados por hora de creación. (El mas antiguo primero).
+
+4.Como barista quiero marcar un pedido como preparado para que el cajero pueda entregarlo al cliente.
+Criterios
+1.Dado que el pedido está pendiente, cuando el barista lo marca como preparado, entonces el pedido cambia su estado a "Listo para entrega".
+2.Dado que un pedido está marcado como "Listo para entrega", cuando el cajero revisa los pedidos, entonces puede identificar que pedido puede entregarse.
+
+5.Como administrador quiero consultar el total de ventas diarias para llevar un control. 
+Criterios
+1.Dado que existen ventas registradas en el día, cuando el administrador consulta las ventas diarias, entonces se puede mostrar el acumulado del día.
+2.Dado que el administrador selecciona una fecha específica, cuando consulta las ventas, entonces solo se muestran las ventas correspondientes a la fecha de búsqueda.

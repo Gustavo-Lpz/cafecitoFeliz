@@ -1,0 +1,10 @@
+1. Como cajero quiero registrar las ventas del día a día para llevar un control de ingresos.
+2. Como cliente quiero recibir un comprobante de mi compra para saber lo que compre.
+3. Como administrador quiero consultar el total de ventas diarias para llevar un control.
+4. Como barista quiero ver los pedidos pendientes para preparar las bebidas en el orden de llegada.
+5. Como administrador quiero actualizar los precios del menú para reflejar cambios en costos o         promociones del día.
+6. Como cajero quiero saber qué productos hay en stock para evitar vender artículos agotados.
+7. Como administrador quiero registrar el inventario de insumos para saber si se necesita pedir mas producto.
+8. Como barista quiero marcar un pedido como preparado para que el cajero pueda entregarlo al cliente.
+9. Como administrador quiero identificar los productos más vendidos para poner promociones.
+10. Como cliente quiero saber que ingredientes o se usan para poder evitar alguna alergia
