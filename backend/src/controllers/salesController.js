@@ -34,7 +34,6 @@ async function processSale({
       throw new Error(`Stock insuficiente para ${product.name}`);
     }
 
-    // 🔥 DESCONTAR STOCK
     product.stock -= quantity;
     await product.save();
 
@@ -52,22 +51,29 @@ async function processSale({
   }
 
   // =========================
-  // DESCUENTO USUARIO
+  // 🔥 DESCUENTO USUARIO
   // =========================
   let discountPercent = 0;
   let discountAmount = 0;
 
   if (userId) {
+
     const user = await User.findById(userId);
 
-    discountPercent = calculateDiscount(user.purchasesCount);
-    discountAmount = Number((subtotal * discountPercent / 100).toFixed(2));
-
+    // ✅ primero incrementamos compra
     user.purchasesCount += 1;
+
+    // ✅ luego calculamos descuento
+    discountPercent = calculateDiscount(user.purchasesCount);
+
+    discountAmount = Number(
+      (subtotal * discountPercent / 100).toFixed(2)
+    );
+
     await user.save();
   }
 
-  const total = subtotal - discountAmount;
+  const total = Number((subtotal - discountAmount).toFixed(2));
 
   // =========================
   // CREAR VENTA
@@ -130,16 +136,17 @@ export async function createSale(req, res, next) {
   } catch (error) {
     next(error);
   }
-
 }
 
+
 // =====================================================
-// OBTENER TODAS LAS VENTAS (admin)
+// ADMIN
 // =====================================================
 export async function getAllSales(req, res, next) {
   try {
+
     const sales = await Sale.find()
-      .populate('user', 'displayName email')
+      .populate('user', 'displayName email purchasesCount')
       .populate('items.product', 'name price')
       .sort({ createdAt: -1 });
 
@@ -188,4 +195,3 @@ export async function getDailySalesSummary(req, res, next) {
     next(error);
   }
 }
-
