@@ -1,12 +1,38 @@
-# dependencias
+# =========================
+# Dependencias
+# =========================
 node_modules/
 
-# variables sensibles
+# =========================
+# Variables sensibles
+# =========================
 .env
+.env.*
+!.env.example
 
-# logs
-logs
+# =========================
+# Logs
+# =========================
+logs/
 *.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# sistema
+# =========================
+# Build / cache
+# =========================
+dist/
+coverage/
+
+# =========================
+# Sistema / OS
+# =========================
 .DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
