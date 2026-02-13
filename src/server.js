@@ -4,7 +4,7 @@ import  connectDB  from './config/db.js';
 
 dotenv.config(); // 👈 FORZAMOS la carga del .env
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 console.log('MONGODB_URI:', process.env.MONGODB_URI); // 👈 DEBUG
 
